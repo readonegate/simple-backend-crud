@@ -7,7 +7,7 @@ setelah selesai node modules nya terinstall tinggal di anda buat database menggu
 saya menggunakan xampp untuk database mysqlnya, 
 di bagian folder config 
 kalian sesuaikan nama databasenya dengan database yang kalian buat,
-buatlah tabel name dan description,updateAt, deleteAt,
+buatlah tabel name dan description,createdAt, updatedAt,
 
 jika sudah selesai tinggal di nyalakan servernya dengan membuka terminal 
 ketikan 
