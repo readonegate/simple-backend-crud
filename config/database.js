@@ -7,4 +7,4 @@ const db = new sequelize('mern_db', 'root', '', {
 })
 
 
-export default db;
+export default db ;

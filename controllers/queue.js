@@ -1,10 +1,10 @@
-import Todos from "../models/todo.js";
+import Queues from "../models/queue.js";
 
 
 
-export const getAlltodos = async (req, res) => {
+export const getAllqueue = async (req, res) => {
     try {
-        const todo = await Todos.findAll();
+        const todo = await Queues.findAll();
         res.send(todo)
     } catch (error) {
         console.log(error)
@@ -12,9 +12,9 @@ export const getAlltodos = async (req, res) => {
 }
 
 
-export const getTodoById = async (req, res) => {
+export const getQueueById = async (req, res) => {
     try {
-        const todo = await Todos.findAll({
+        const todo = await Queues.findAll({
             where: {
                 id: req.params.id
             }
@@ -28,11 +28,11 @@ export const getTodoById = async (req, res) => {
 
 
 
-export const createTodo = async (req, res) => {
+export const createQueue = async (req, res) => {
     try {
-        await Todos.create(req.body);
+        await Queues.create(req.body);
         res.json({
-            "message": "todo is created .. !"
+            "message": "Queue is Added .. !"
         })
     } catch (error) {
         console.log(error)
@@ -40,15 +40,15 @@ export const createTodo = async (req, res) => {
 }
 
 
-export const updateTodo = async (req, res) => {
+export const updateQueue = async (req, res) => {
     try {
-        await Todos.update(req.body, {
+        await Queues.update(req.body, {
             where: {
                 id: req.params.id
             }
         });
         res.json({
-            "message": "todo is updated .. !"
+            "message": "Queue is updated .. !"
         })
     } catch (error) {
         console.log(error)
@@ -57,15 +57,15 @@ export const updateTodo = async (req, res) => {
 
 
 
-export const deleteTodo = async (req, res) => {
+export const deleteQueue = async (req, res) => {
     try {
-        await Todos.destroy({
+        await Queues.destroy({
             where: {
                 id: req.params.id
             }
         });
         res.json({
-            "message": "todo is deleted .. !"
+            "message": "Queue is deleted .. !"
         })
     } catch (error) {
         console.log(error)
