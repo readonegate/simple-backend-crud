@@ -74,4 +74,33 @@ export const deleteQueue = async (req, res) => {
 
 
 
+export const getFirstqueue = async (req, res) => {
+    try {
+        const todo = await Queues.findAll({
+            limit: 1,
+            order:[
+                ['createdAt', 'ASC']
+            ]
+        });
+        res.send(todo)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const resetAllqueue = async (req, res) => {
+    try {
+        await Queues.destroy({
+            truncate: true
+        });
+        res.json({
+            "message": "Queue is deleted .. !"
+        })
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+
 

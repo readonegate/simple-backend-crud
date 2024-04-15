@@ -7,7 +7,7 @@ import {
     deleteTodo
 
 } from '../controllers/todos.js';
-import { getAllqueue, getQueueById, createQueue, updateQueue, deleteQueue } from '../controllers/queue.js';
+import { getAllqueue, getQueueById, createQueue, updateQueue, deleteQueue, getFirstqueue,resetAllqueue } from '../controllers/queue.js';
 
 
 
@@ -26,6 +26,8 @@ Route.get('/queue/:id', getQueueById)
 Route.post('/queue', createQueue)
 Route.put('/queue/:id', updateQueue)
 Route.delete('/queue/:id', deleteQueue)
+Route.get('/fqueue', getFirstqueue)
+Route.delete('/resetqueue', resetAllqueue)
 
 
 
